@@ -266,6 +266,30 @@ void RBTree::inorder(Node* n, std::ostream& oss) {
 
   inorder(n->right, oss);
 }
+/** copySortedArr(int* array)
+ * copies elements of the tree in-order 
+ * into the array
+ **/
+void RBTree::copySortedArr(int* array){
+  int i = 0;
+  copySortedArr(root,array, i);
+}
+
+// HElper method that will traverse RBTree in-order and copy
+//the elements to the array
+void RBTree::copySortedArr(Node* n, int* arrray, int &i){
+  //IF the tree is empty then there is nothing to copy
+  if(!n)
+    return;
+
+  //next I am going to recursively call the method with the 
+  //left child
+  copySortedArr(n -> left, array , i);
+  // next will copy to the parent array
+  array[i++] = n -> data;
+  //recursively call the same method with the right child
+  copySortedArr(n ->right, array,i);
+}
 
 void RBTree::inorder(std::ostream& oss) {
   inorder(root, oss);
