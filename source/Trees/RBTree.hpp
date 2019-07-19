@@ -210,3 +210,13 @@ class RBTree {
    */
   void postorder(std::ostream& oss = std::cout);
 };
+
+//Creating a helper method that will traverse RBTree in-order
+// and copy elements to the array
+
+void copySortedArr(Node* n, int* array, int &i);
+//MEthod that will be called from sort to copy elements for RBTree to the 
+//the array
+void copySortedArr(int* array);
+
+
