@@ -59,10 +59,9 @@ TEST_CASE("Sorting") {
           for (int i = 0; i < n; ++i)
             freq[arr[i] + 2000] += 1;
 
-          sort(arr, n);
-          
-          //LLRBTreeSort(arr, n);
-          
+            //Call LLRB Treesort
+            LLRBTreeSort(arr,n) 
+
           for (int i = 0; i < n; ++i)
             freq[arr[i] + 2000] -= 1;
 
@@ -72,21 +71,4 @@ TEST_CASE("Sorting") {
       }
     }
   }
-}
-
-TEST_CASE("Heapsort"){
-  //make two arrays
-  // unsorted array in random order 
-  // make another array with the same numbers in order
-  int sortedarray[5] = {1,2,3,4,5};
-  int randomarray[5] = {5,1,3,2,4};
-  // call heapsort on the unsorted arrray 
-  heapsort(randomarray, 5);
-// check if both arrrays are equal after calling heapsort
-for (int i = 0; i < 5; i++){
-  if (sortedarray[i] != randomarray[i]){
-    printf("Test fail!\n");
-  }
-}
-
 }
